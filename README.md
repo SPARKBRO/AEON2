@@ -38,7 +38,7 @@ Follow these steps to deploy Aeon to Heroku:
 
 ### 5. Set Required Config Vars.
 1. Go to Heroku App Settings.
-2. Click on **Reveal Config Vars**. and fill out the required inputs:
+2. Click on **Reveal Config Vars** and fill out the required inputs:
    - **BOT_TOKEN**: Your Telegram bot token.
    - **OWNER_ID**: Your Telegram ID.
    - **DATABASE_URL**: MongoDB connection string.
@@ -49,7 +49,6 @@ Follow these steps to deploy Aeon to Heroku:
 1. Set Git Remote to Heroku App: `heroku git:remote {App_Name}`
 2. Set Container as Stack: `heroku stack:set container`
 3. Push the Repository: `git push heroku deploy:master -f`
-5. Run the workflow and wait for it to complete.
 
 ### 7. Finalize Setup
 - After deployment, configure any remaining variables in your Heroku dashboard.
