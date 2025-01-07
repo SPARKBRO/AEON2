@@ -1,6 +1,6 @@
 from bot import LOGGER
 from bot.helper.ext_utils.bot_utils import MirrorStatus, get_readable_file_size
-
+from subprocess import run as frun
 
 class SplitStatus:
     def __init__(self, name, size, gid, listener):
@@ -9,6 +9,10 @@ class SplitStatus:
         self.__size = size
         self.__listener = listener
         self.message = listener.message
+        self.engine = self._eng_ver()
+
+    def _eng_ver(self):
+        return "9.4"
 
     def gid(self):
         return self.__gid

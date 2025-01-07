@@ -20,7 +20,7 @@ from aiohttp import ClientSession as aioClientSession
 from aiofiles import open as aiopen
 from aiofiles.os import path as aiopath
 from aiofiles.os import mkdir
-from pyrogram.types import BotCommand
+from nekozee.types import BotCommand
 
 from bot import (
     LOGGER,
@@ -109,18 +109,18 @@ STATUS_LIMIT = 4
 
 
 class MirrorStatus:
-    STATUS_UPLOADING = "Uploading"
-    STATUS_DOWNLOADING = "Downloading"
-    STATUS_CLONING = "Cloning"
-    STATUS_QUEUEDL = "DL queued"
-    STATUS_QUEUEUP = "UL queued"
-    STATUS_PAUSED = "Paused"
-    STATUS_ARCHIVING = "Archiving"
-    STATUS_EXTRACTING = "Extracting"
-    STATUS_SPLITTING = "Splitting"
-    STATUS_CHECKING = "CheckUp"
-    STATUS_SEEDING = "Seeding"
-    STATUS_PROCESSING = "Processing"
+    STATUS_UPLOADING = "Uploading 📤"
+    STATUS_DOWNLOADING = "Downloading 📥"
+    STATUS_CLONING = "Cloning 🔃"
+    STATUS_QUEUEDL = "DL queued ⏳"
+    STATUS_QUEUEUP = "UL queued ⏳"
+    STATUS_PAUSED = "Paused ⛔️"
+    STATUS_ARCHIVING = "Archiving 🛠"
+    STATUS_EXTRACTING = "Extracting 📂"
+    STATUS_SPLITTING = "Splitting ✂️"
+    STATUS_CHECKING = "CheckUp ⏱"
+    STATUS_SEEDING = "Seeding 🌧"
+    STATUS_PROCESSING = "Processing ♻️"
 
 
 class SetInterval:
@@ -269,27 +269,28 @@ def get_readable_message():
         # msg += f"<b>{download.status()}:</b> {escape(f'{download.name()}')}\n"
         # msg += f"by {source(download)}\n"
         if download.status() not in [MirrorStatus.STATUS_SPLITTING, MirrorStatus.STATUS_SEEDING, MirrorStatus.STATUS_PROCESSING]:
-            msg += f"\n<blockquote>#FileName: {download.name()}</blockquote>\n"
+            msg += f"\n<pre language='FileName'>{download.name()}</pre>\n"
             msg += f"<b>{download.status()}:</b>"
             # msg += f"<b>\n⌑ ғɪʟᴇɴᴀᴍᴇ</b> » <i>{escape(f'{download.name()}')}</i>\n"
-            msg += f"\n<blockquote>🚀 ᴘʀᴏᴄᴇssᴇᴅ: {progress_bar(download.progress())} » {download.progress()}"
-            msg += f"\n💯 ᴅᴏɴᴇ: {download.processed_bytes()} of {download.size()}"
-            msg += f"\n🚀 sᴘᴇᴇᴅ: {download.speed()}"
-            msg += f'\n⏳ ᴇsᴛɪᴍᴀᴛᴇᴅ: {download.eta()}'
-            msg += f"\n👤 ᴜsᴇʀ: {download.message.from_user.mention} \n🔗 ᴜsᴇʀ ɪᴅ: <spoiler>{download.message.from_user.id}</spoiler>"
+            msg += f"\n✅ {progress_bar(download.progress())} » {download.progress()}"
+            msg += f"\n<code>💯 Done</code>: {download.processed_bytes()} of {download.size()}"
+            msg += f"\n<code>🚀 Speed</code>: {download.speed()}"
+            msg += f"\n<code>🤖 Engine</code>: <b>{download.engine}</b>"
+            msg += f'\n<code>⏳ ETA</code>: {download.eta()}'
+            msg += f"\n<code>👤 User</code>: {download.message.from_user.mention} \n<code>🔗 User ID</code>: <spoiler>{download.message.from_user.id}</spoiler>"
             if hasattr(download, 'seeders_num'):
                 with contextlib.suppress(Exception):
-                    msg += f"\n🌱 sᴇᴇᴅᴇʀs: {download.seeders_num()} | 📥 ʟᴇᴇᴄʜᴇʀs: {download.leechers_num()}"
+                    msg += f"\n<code>🌱 S/L</code>: {download.seeders_num()}/{download.leechers_num()}"
         elif download.status() == MirrorStatus.STATUS_SEEDING:
-            msg += f"\n💽 sɪᴢᴇ: {download.size()}"
-            msg += f"\n🚀 sᴘᴇᴇᴅ: {download.upload_speed()}"
-            msg += f"\n📈 ᴜᴘʟᴏᴀᴅᴇᴅ: {download.uploaded_bytes()}"
-            msg += f"\n📟 ʀᴀᴛɪᴏ: {download.ratio()}"
-            msg += f"\n⏳ ᴛɪᴍᴇ: {download.seeding_time()}"
+            msg += f"\n<code>💽 Size</code>: {download.size()}"
+            msg += f"\n<code>🚀 Speed</code>: {download.upload_speed()}"
+            msg += f"\n<code>📈 Uploaded</code>: {download.uploaded_bytes()}"
+            msg += f"\n<code>📟 Ratio</code>: {download.ratio()}"
+            msg += f"\n<code>⏳ Time</code>: {download.seeding_time()}"
         else:
-            msg += f"\n💽 sɪᴢᴇ: {download.size()}"
-        msg += f"\n💯 ᴇʟᴀᴘsᴇᴅ: {get_readable_time(time() - download.message.date.timestamp())}</blockquote>"
-        msg += f"\n<blockquote><b> ❌⚠️: /stop_{download.gid()[:8]}</b></blockquote>\n\n"
+            msg += f"\n<code>💽 Size</code>: {download.size()}"
+        msg += f"\n<code>💯 Past</code>: {get_readable_time(time() - download.message.date.timestamp())}</blockquote>"
+        msg += f"\n<b> ❌⚠️: /stop_{download.gid()[:8]}</b>\n\n"
     if len(msg) == 0:
         return None, None
     if tasks > STATUS_LIMIT:

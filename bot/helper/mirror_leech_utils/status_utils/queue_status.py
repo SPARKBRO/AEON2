@@ -10,6 +10,10 @@ class QueueStatus:
         self.__listener = listener
         self.__status = status
         self.message = listener.message
+        self.engine = f"Queue v{self._eng_ver()}"
+
+    def _eng_ver(self):
+        return "3.0"
 
     def gid(self):
         return self.__gid

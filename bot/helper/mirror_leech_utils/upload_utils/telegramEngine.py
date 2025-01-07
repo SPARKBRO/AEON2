@@ -21,8 +21,8 @@ from aiofiles.os import path as aiopath
 from aiofiles.os import mkdir, makedirs
 from aiofiles.os import remove as aioremove
 from aiofiles.os import rename as aiorename
-from pyrogram.types import InputMediaVideo, InputMediaDocument
-from pyrogram.errors import (
+from nekozee.types import InputMediaVideo, InputMediaDocument
+from nekozee.errors import (
     FloodWait,
     PeerIdInvalid,
     ChannelInvalid,
@@ -66,7 +66,7 @@ from bot.helper.telegram_helper.message_utils import (
 )
 
 LOGGER = getLogger(__name__)
-getLogger("pyrogram").setLevel(ERROR)
+getLogger("nekozee").setLevel(ERROR)
 
 
 class TgUploader:

@@ -1,7 +1,7 @@
 from asyncio import sleep
 
-from pyrogram.filters import regex, command
-from pyrogram.handlers import MessageHandler, CallbackQueryHandler
+from nekozee.filters import regex, command
+from nekozee.handlers import MessageHandler, CallbackQueryHandler
 
 from bot import OWNER_ID, bot, bot_name, user_data, download_dict, download_dict_lock
 from bot.helper.ext_utils.bot_utils import (

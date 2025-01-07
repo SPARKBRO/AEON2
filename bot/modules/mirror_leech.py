@@ -4,8 +4,8 @@ from base64 import b64encode
 from asyncio import sleep
 
 from aiofiles.os import path as aiopath
-from pyrogram.filters import command
-from pyrogram.handlers import MessageHandler
+from nekozee.filters import command
+from nekozee.handlers import MessageHandler
 
 from bot import LOGGER, bot, user_data, config_dict
 from bot.helper.ext_utils.bot_utils import (

@@ -5,8 +5,8 @@ from asyncio import sleep
 from traceback import format_exc
 
 from aiofiles.os import remove as aioremove
-from pyrogram.types import InputMediaPhoto
-from pyrogram.errors import (
+from nekozee.types import InputMediaPhoto
+from nekozee.errors import (
     RPCError,
     FloodWait,
     MediaEmpty,

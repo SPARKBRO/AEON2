@@ -10,9 +10,9 @@ from aiofiles import open as aiopen
 from aioshutil import rmtree as aiormtree
 from aiofiles.os import path as aiopath
 from aiofiles.os import remove, rename
-from pyrogram.enums import ChatType
-from pyrogram.filters import regex, create, command
-from pyrogram.handlers import MessageHandler, CallbackQueryHandler
+from nekozee.enums import ChatType
+from nekozee.filters import regex, create, command
+from nekozee.handlers import MessageHandler, CallbackQueryHandler
 
 from bot import (
     LOGGER,

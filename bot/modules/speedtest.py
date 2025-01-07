@@ -1,6 +1,6 @@
 from speedtest import Speedtest
-from pyrogram.filters import command
-from pyrogram.handlers import MessageHandler
+from nekozee.filters import command
+from nekozee.handlers import MessageHandler
 
 from bot import LOGGER, bot
 from bot.helper.ext_utils.bot_utils import new_task, get_readable_file_size

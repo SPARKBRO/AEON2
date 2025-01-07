@@ -8,8 +8,8 @@ from aiofiles import open as aiopen
 from aiofiles.os import path as aiopath
 from aiofiles.os import mkdir
 from aiofiles.os import remove as aioremove
-from pyrogram.filters import command
-from pyrogram.handlers import MessageHandler
+from nekozee.filters import command
+from nekozee.handlers import MessageHandler
 
 from bot import LOGGER, bot
 from bot.helper.ext_utils.bot_utils import cmd_exec

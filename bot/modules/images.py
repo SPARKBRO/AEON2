@@ -2,8 +2,8 @@ from asyncio import sleep as asleep
 
 from telegraph import upload_file
 from aiofiles.os import remove as aioremove
-from pyrogram.filters import regex, command
-from pyrogram.handlers import MessageHandler, CallbackQueryHandler
+from nekozee.filters import regex, command
+from nekozee.handlers import MessageHandler, CallbackQueryHandler
 
 from bot import IMAGES, LOGGER, DATABASE_URL, bot
 from bot.helper.ext_utils.bot_utils import new_task, handle_index

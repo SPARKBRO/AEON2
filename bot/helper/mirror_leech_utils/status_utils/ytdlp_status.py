@@ -5,6 +5,7 @@ from bot.helper.ext_utils.bot_utils import (
     get_readable_file_size,
 )
 from bot.helper.ext_utils.files_utils import get_path_size
+from pkg_resources import get_distribution
 
 
 class YtDlpDownloadStatus:
@@ -13,6 +14,10 @@ class YtDlpDownloadStatus:
         self.__listener = listener
         self.__gid = gid
         self.message = listener.message
+        self.engine = f"Yt-Dlp v{self._eng_ver()}"
+
+    def _eng_ver(self):
+        return get_distribution("yt-dlp").version
 
     def gid(self):
         return self.__gid

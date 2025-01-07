@@ -6,8 +6,8 @@ from traceback import format_exc
 from contextlib import suppress, redirect_stdout
 
 from aiofiles import open as aiopen
-from pyrogram.filters import command
-from pyrogram.handlers import MessageHandler, EditedMessageHandler
+from nekozee.filters import command
+from nekozee.handlers import MessageHandler, EditedMessageHandler
 
 from bot import LOGGER, bot, user
 from bot.helper.ext_utils.bot_utils import new_task

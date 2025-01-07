@@ -3,8 +3,8 @@ from html import escape
 from urllib.parse import quote
 
 from aiohttp import ClientSession
-from pyrogram.filters import regex, command
-from pyrogram.handlers import MessageHandler, CallbackQueryHandler
+from nekozee.filters import regex, command
+from nekozee.handlers import MessageHandler, CallbackQueryHandler
 
 from bot import LOGGER, bot, config_dict, xnox_client
 from bot.helper.ext_utils.bot_utils import (

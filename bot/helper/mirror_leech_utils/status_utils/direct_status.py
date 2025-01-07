@@ -3,7 +3,7 @@ from bot.helper.ext_utils.bot_utils import (
     get_readable_time,
     get_readable_file_size,
 )
-
+from bot import aria2
 
 class DirectStatus:
     def __init__(self, obj, gid, listener):
@@ -11,6 +11,10 @@ class DirectStatus:
         self.__listener = listener
         self.__obj = obj
         self.message = self.__listener.message
+        self.engine = f"Aria2c v{self._eng_ver()}"
+
+    def _eng_ver(self):
+        return aria2.client.get_version()["version"]
 
     def gid(self):
         return self.__gid

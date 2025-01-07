@@ -1,5 +1,5 @@
-from pyrogram.filters import regex, command
-from pyrogram.handlers import MessageHandler, CallbackQueryHandler
+from nekozee.filters import regex, command
+from nekozee.handlers import MessageHandler, CallbackQueryHandler
 
 from bot import LOGGER, bot
 from bot.helper.ext_utils.bot_utils import (

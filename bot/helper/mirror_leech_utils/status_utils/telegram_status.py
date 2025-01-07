@@ -3,7 +3,7 @@ from bot.helper.ext_utils.bot_utils import (
     get_readable_time,
     get_readable_file_size,
 )
-
+from pkg_resources import get_distribution
 
 class TelegramStatus:
     def __init__(self, obj, size, message, gid, status):
@@ -12,6 +12,10 @@ class TelegramStatus:
         self.__gid = gid
         self.__status = status
         self.message = message
+        self.engine = f"Telegram v{self._eng_ver()}"
+
+    def _eng_ver(self):
+        return get_distribution("nekozee").version
 
     def processed_bytes(self):
         return get_readable_file_size(self.__obj.processed_bytes)

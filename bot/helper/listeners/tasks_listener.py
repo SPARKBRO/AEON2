@@ -9,7 +9,7 @@ from aioshutil import move
 from aiofiles.os import path as aiopath
 from aiofiles.os import remove as aioremove
 from aiofiles.os import listdir, makedirs
-from pyrogram.enums import ChatType
+from nekozee.enums import ChatType
 
 from bot import (
     LOGGER,

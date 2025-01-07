@@ -1,8 +1,8 @@
 from time import time
 
 from psutil import disk_usage
-from pyrogram.filters import regex, command
-from pyrogram.handlers import MessageHandler, CallbackQueryHandler
+from nekozee.filters import regex, command
+from nekozee.handlers import MessageHandler, CallbackQueryHandler
 
 from bot import (
     Interval,

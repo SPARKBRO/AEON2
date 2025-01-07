@@ -29,7 +29,7 @@ from bot.helper.mirror_leech_utils.status_utils.telegram_status import TelegramS
 
 global_lock = Lock()
 GLOBAL_GID = set()
-getLogger("pyrogram").setLevel(ERROR)
+getLogger("nekozee").setLevel(ERROR)
 
 
 class TelegramDownloadHelper:

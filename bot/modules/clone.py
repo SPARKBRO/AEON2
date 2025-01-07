@@ -3,8 +3,8 @@ from asyncio import sleep, gather
 from secrets import token_hex
 
 from aiofiles.os import path as aiopath
-from pyrogram.filters import command
-from pyrogram.handlers import MessageHandler
+from nekozee.filters import command
+from nekozee.handlers import MessageHandler
 
 from bot import LOGGER, bot, config_dict, download_dict, download_dict_lock
 from bot.helper.ext_utils.bot_utils import (

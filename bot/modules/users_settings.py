@@ -10,8 +10,8 @@ from PIL import Image
 from aiofiles.os import path as aiopath
 from aiofiles.os import mkdir
 from aiofiles.os import remove as aioremove
-from pyrogram.filters import regex, create, command
-from pyrogram.handlers import MessageHandler, CallbackQueryHandler
+from nekozee.filters import regex, create, command
+from nekozee.handlers import MessageHandler, CallbackQueryHandler
 
 from bot import DATABASE_URL, IS_PREMIUM_USER, bot, user_data, config_dict
 from bot.helper.ext_utils.bot_utils import (

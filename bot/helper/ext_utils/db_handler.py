@@ -191,6 +191,5 @@ class DbManager:
         await self.__db.access_token.delete_many({})
         self.__conn.close
 
-
 if DATABASE_URL:
     bot_loop.run_until_complete(DbManager().db_load())

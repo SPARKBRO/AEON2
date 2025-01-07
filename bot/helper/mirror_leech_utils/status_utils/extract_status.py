@@ -8,6 +8,8 @@ from bot.helper.ext_utils.bot_utils import (
     get_readable_file_size,
 )
 from bot.helper.ext_utils.files_utils import get_path_size
+from subprocess import run as prun
+
 
 
 class ExtractStatus:
@@ -19,6 +21,18 @@ class ExtractStatus:
         self.__uid = listener.uid
         self.__start_time = time()
         self.message = listener.message
+        self.engine = f"p7zip v{self._eng_ver()}"
+
+    def _eng_ver(self):
+        _engine = prun(
+            [
+                "7z",
+                "-version"
+            ],
+            capture_output=True,
+            text=True
+        )
+        return _engine.stdout.split("\n")[1].split(" ")[1]
 
     def gid(self):
         return self.__gid

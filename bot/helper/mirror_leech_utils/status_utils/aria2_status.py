@@ -25,6 +25,10 @@ class Aria2Status:
         self.start_time = 0
         self.seeding = seeding
         self.message = self.__listener.message
+        self.engine = f"Aria2c v{self._eng_ver()}"
+
+    def _eng_ver(self):
+        return aria2.client.get_version()["version"]
 
     def __update(self):
         if self.__download is None:

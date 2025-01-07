@@ -1,6 +1,6 @@
 from asyncio import sleep
 
-from bot import LOGGER, QbTorrents, xnox_client, qb_listener_lock
+from bot import LOGGER, QbTorrents, xnox_client, qb_listener_lock, xnox_client
 from bot.helper.ext_utils.bot_utils import (
     MirrorStatus,
     sync_to_async,
@@ -25,6 +25,10 @@ class QbittorrentStatus:
         self.queued = queued
         self.seeding = seeding
         self.message = listener.message
+        self.engine = f"qBit {self._eng_ver()}"
+
+    def _eng_ver(self):
+        return xnox_client.app.version
 
     def __update(self):
         new_info = get_download(self.__client, f"{self.__listener.uid}")

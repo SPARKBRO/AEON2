@@ -1,9 +1,9 @@
 import asyncio
 from time import time
 
-from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
-from pyrogram.filters import command
-from pyrogram.handlers import MessageHandler
+from nekozee.errors import FloodWait, UserIsBlocked, InputUserDeactivated
+from nekozee.filters import command
+from nekozee.handlers import MessageHandler
 
 from bot import DATABASE_URL, bot
 from bot.helper.ext_utils.bot_utils import new_task, get_readable_time

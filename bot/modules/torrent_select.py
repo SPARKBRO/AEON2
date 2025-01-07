@@ -2,8 +2,8 @@ import contextlib
 
 from aiofiles.os import path as aiopath
 from aiofiles.os import remove as aioremove
-from pyrogram.filters import regex
-from pyrogram.handlers import CallbackQueryHandler
+from nekozee.filters import regex
+from nekozee.handlers import CallbackQueryHandler
 
 from bot import LOGGER, bot, aria2, xnox_client
 from bot.helper.ext_utils.bot_utils import sync_to_async, get_task_by_gid

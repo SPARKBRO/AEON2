@@ -27,8 +27,8 @@ from dotenv import load_dotenv, dotenv_values
 from uvloop import install
 from pymongo import MongoClient
 from tzlocal import get_localzone
-from pyrogram import Client as tgClient
-from pyrogram import enums
+from nekozee import Client as tgClient
+from nekozee import enums
 from qbittorrentapi import Client as qbClient
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 

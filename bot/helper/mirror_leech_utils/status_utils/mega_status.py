@@ -3,7 +3,7 @@ from bot.helper.ext_utils.bot_utils import (
     get_readable_time,
     get_readable_file_size,
 )
-
+from mega import MegaApi
 
 class MegaDownloadStatus:
     def __init__(self, name, size, gid, obj, message):
@@ -12,6 +12,10 @@ class MegaDownloadStatus:
         self.__size = size
         self.__gid = gid
         self.message = message
+        self.engine = f"Mega SDK v{self._eng_ver()}"
+
+    def _eng_ver(self):
+        return MegaApi("zee").getVersion()
 
     def name(self):
         return self.__name

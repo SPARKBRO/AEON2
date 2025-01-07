@@ -6,8 +6,8 @@ from configparser import ConfigParser
 
 from aiofiles import open as aiopen
 from aiofiles.os import path as aiopath
-from pyrogram.filters import user, regex
-from pyrogram.handlers import CallbackQueryHandler
+from nekozee.filters import user, regex
+from nekozee.handlers import CallbackQueryHandler
 
 from bot import LOGGER, config_dict
 from bot.helper.ext_utils.bot_utils import (
