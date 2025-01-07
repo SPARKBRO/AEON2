@@ -81,11 +81,11 @@ if DATABASE_URL:
 
 UPSTREAM_REPO = environ.get("UPSTREAM_REPO", "")
 if len(UPSTREAM_REPO) == 0:
-    UPSTREAM_REPO = "https://github.com/5hojib/Aeon"
+    UPSTREAM_REPO = "https://github.com/Hrishi2861/Aeon-Modified"
 
 UPSTREAM_BRANCH = environ.get("UPSTREAM_BRANCH", "")
 if len(UPSTREAM_BRANCH) == 0:
-    UPSTREAM_BRANCH = "main"
+    UPSTREAM_BRANCH = "upstream"
 
 if path.exists(".git"):
     run(["rm", "-rf", ".git"], check=False)
@@ -93,8 +93,8 @@ if path.exists(".git"):
 update = run(
     [
         f"git init -q \
-                 && git config --global user.email yesiamshojib@gmail.com \
-                 && git config --global user.name 5hojib \
+                 && git config --global user.email hrishithombare15@gmail.com \
+                 && git config --global user.name Hrishikesh \
                  && git add . \
                  && git commit -sm update -q \
                  && git remote add origin {UPSTREAM_REPO} \
