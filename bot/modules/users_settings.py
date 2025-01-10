@@ -261,7 +261,7 @@ async def update_user_settings(
     user_id = query.from_user.id
     thumbnail = f"Thumbnails/{user_id}.jpg"
     if not ospath.exists(thumbnail):
-        thumbnail = "https://graph.org/JetMirror-07-24-2"
+        thumbnail = "https://telegra.ph/file/c3782a86330a6a5f2f763.jpg"
     await edit_message(query.message, msg, button, thumbnail)
 
 
@@ -271,7 +271,7 @@ async def user_settings(_, message):
     user_id = message.from_user.id
     thumbnail = f"Thumbnails/{user_id}.jpg"
     if not ospath.exists(thumbnail):
-        thumbnail = "https://graph.org/JetMirror-07-24-2"
+        thumbnail = "https://telegra.ph/file/c3782a86330a6a5f2f763.jpg"
     x = await send_message(message, msg, button, thumbnail)
     await five_minute_del(message)
     await delete_message(x)
