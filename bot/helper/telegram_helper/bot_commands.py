@@ -14,7 +14,7 @@ class _BotCommands:
         self.StopAllCommand = [f"stopall{i}", "stopallbot"]
         self.ListCommand = f"list{i}"
         self.SearchCommand = f"search{i}"
-        self.StatusCommand = [f"status{i}", "statusall"]
+        self.StatusCommand = [f"s{i}", "sall"]
         self.UsersCommand = f"users{i}"
         self.AuthorizeCommand = f"authorize{i}"
         self.UnAuthorizeCommand = f"unauthorize{i}"
@@ -28,8 +28,8 @@ class _BotCommands:
         self.ShellCommand = f"shell{i}"
         self.EvalCommand = f"eval{i}"
         self.ExecCommand = f"exec{i}"
-        self.BotSetCommand = f"bsettings{i}"
-        self.UserSetCommand = f"usettings{i}"
+        self.BotSetCommand = [f"bsettings{i}", f"bs{i}"]
+        self.UserSetCommand = [f"usettings{i}", f"us{i}"]
         self.SpeedCommand = f"speedtest{i}"
         self.AddImageCommand = f"addimg{i}"
         self.ImagesCommand = f"images{i}"
