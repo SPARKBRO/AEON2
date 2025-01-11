@@ -464,7 +464,7 @@ class MirrorLeechListener:
     async def onUploadComplete(
         self, link, size, files, folders, mime_type, name, rclonePath=""
     ):
-        await self.message.reply_sticker("CAACAgIAAxkBAAEcVCtnXt9Dvi16SLqhI6a8n4uW-jeGsQACjzMAAumt-UlYSD7bJ5sg1DYE")
+        await self.message.reply_sticker("CAACAgUAAxkBAAENB_RngoIRAaLfRmrSfxtAT47kIVMPWgACGwEAAsiUZBSQifwhU2o5ZB4E")
         await asyncio.sleep(2)
         user_id = self.message.from_user.id
         name, _ = await process_file(name, user_id, is_mirror=not self.is_leech)
