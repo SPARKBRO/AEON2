@@ -67,7 +67,7 @@ import asyncio
 async def _mirror_leech(
     client, message, is_qbit=False, is_leech=False, same_dir=None, bulk=[]
 ):
-    sticker_message = await message.reply_sticker("CAACAgUAAxkBAAEM_JhngUmqdXOcdYQ3IDClJegF-hPcSwAC6Q4AAs4GOVeeWid8qRXZ-R4E")
+    sticker_message = await message.reply_sticker("CAACAgUAAxkBAAENB_BngoIF3-4SJHhZ2_1cCk4RwmgwPQACmwADyJRkFJqpbMel02C3HgQ")
     await send_react(message)
     await asyncio.sleep(2)
     await sticker_message.delete()
