@@ -251,7 +251,7 @@ def source(self):
 
 
 def get_readable_message():
-    msg = '<b><a href="tg://settings">Pᴏᴡᴇʀᴇᴅ ʙʏ ꜰ1 ᴍɪʀʀᴏʀ ♥️</a></b>\n'
+    msg = '<b><a href="t.me/SPARKBR0">Pᴏᴡᴇʀᴇᴅ ʙʏ Sᴘᴀʀᴋʙʀᴏ ⚡</a></b>\n'
     button = None
     tasks = len(download_dict)
     current_time = get_readable_time(time() - bot_start_time)
